@@ -11,7 +11,7 @@ interface ChartData {
 }
 
 const UsersChart: React.FC = () => {
-  const [users, setUsers] = useState<User[]>([]);
+  const [users, setUsers] = useState<User[]>([]); 
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {

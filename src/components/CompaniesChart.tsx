@@ -48,7 +48,7 @@ const CompanyPie: React.FC = () => {
       <h2>Payments by Company</h2>
       <PieChart width={800} height={400}>
         <Pie data={data} dataKey="value" nameKey="name" outerRadius={150}>
-          {data.map((entry: ChartDataItem, index: number) => (
+          {data.map((_, index: number) => (
             <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
           ))}
         </Pie>

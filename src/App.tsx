@@ -10,10 +10,12 @@ import { fetchUsers } from "./api/users";
 import { fetchCompanies } from "./api/companies";
 import formatCurrency from "./utils/currencyFormatter";
 import loadingSpinner from "./utils/loadingSpinner";
+import type { User } from "./api/users";
+import type { Company } from "./api/companies";
 
 const App = () => {
-  const [users, setUsers] = useState([]);
-  const [companies, setCompanies] = useState([]);
+  const [users, setUsers] = useState<User[]>([]);
+  const [companies, setCompanies] = useState<Company[]>([]);  
   const [error, setError] = useState(null);
 
   useEffect(() => {
