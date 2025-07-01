@@ -1,3 +1,5 @@
+import LoadingSpinner from "../utils/loadingSpinner";
+
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export interface Company {
@@ -11,7 +13,7 @@ export interface Company {
 export async function fetchCompanies(): Promise<Company[]> {
   const res = await fetch(`${BASE_URL}/companies`);
   if (!res.ok) {
-    throw new Error("Failed to fetch companies");
+    LoadingSpinner({ message: "Failed to fetch companies" });
   }
   return res.json();
 }

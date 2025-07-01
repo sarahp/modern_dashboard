@@ -19,7 +19,7 @@ export interface User {
 export async function fetchUsers(): Promise<User[]> {
   const res = await fetch(`${BASE_URL}/users`);
   if (!res.ok) {
-    loadingSpinner("Failed to fetch users" as any);
+    loadingSpinner({ message: "Failed to fetch users" });
   }
   return await res.json();
 }
